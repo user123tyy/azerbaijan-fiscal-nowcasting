@@ -94,3 +94,7 @@ pip install -r requirements.txt
 BSc Economics, UNEC SABAH Program  
 Baku, Azerbaijan  
 memmedyasaroglu@gmail.com
+## Data Status
+- **World Bank API:** Successfully pulled GDP, Growth, and Inflation (2000-2024).
+- **Known Gaps:** Government Revenue data is missing for 2000-2008. 
+- **Next Steps:** Supplementing missing fiscal data using Central Bank of Azerbaijan (CBAR) statistical bulletins.
