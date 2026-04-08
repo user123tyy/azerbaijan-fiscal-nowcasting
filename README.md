@@ -59,12 +59,25 @@ azerbaijan-fiscal-nowcasting/
 
 ## Key Findings
 
-> Results will be updated as analysis progresses.
+- Azerbaijan's government revenue fell sharply during the **2015 oil crash** 
+  (from ~42% to ~34% of GDP), confirming strong fiscal-oil dependence
+- **COVID-19 (2020)** caused a secondary fiscal contraction to ~35% of GDP
+- ARIMA baseline captures the historical trend but underestimates 
+  post-COVID revenue rebound
+- ARIMAX + Oil Price tested as extended specification; at annual frequency, 
+  oil price signal is already embedded in historical revenue data
+- Structural breaks in 2015 and 2020 require explicit modelling — 
+  a single ARIMA without break controls will systematically misforecast 
+  during recovery phases
 
-- Azerbaijan's fiscal revenues show strong structural dependence on oil price movements
-- The 2015 devaluation represents a clear structural break requiring separate modelling
-- ARIMA baseline RMSE: *[to be updated]*
-- Oil-augmented model RMSE: *[to be updated]*
+## Model Results
+
+| Model | RMSE | MAE | Exogenous Variable |
+|---|---|---|---|
+| ARIMA(1,1,1) | 1.1816 | 0.9315 | None |
+| ARIMAX(1,1,1) | 2.7121 | 2.3558 | Brent Oil Price (USD/barrel) |
+
+Full results: [outputs/model_results.csv](outputs/model_results.csv)
 
 ---
 
@@ -94,7 +107,3 @@ pip install -r requirements.txt
 BSc Economics, UNEC SABAH Program  
 Baku, Azerbaijan  
 memmedyasaroglu@gmail.com
-## Data Status
-- **World Bank API:** Successfully pulled GDP, Growth, and Inflation (2000-2024).
-- **Known Gaps:** Government Revenue data is missing for 2000-2008. 
-- **Next Steps:** Supplementing missing fiscal data using Central Bank of Azerbaijan (CBAR) statistical bulletins.
